@@ -38,7 +38,7 @@ body {
   width: 180px;
   height: 220px;
   border: 5px solid #fff;
-  border-radius: 50% / 35%; /* Oval shape */
+  border-radius: 50% / 35%;
   overflow: hidden;
   background: #fff;
 }
@@ -49,7 +49,7 @@ body {
   object-fit: cover;
 }
 
-/* Info Section (below banner, centered) */
+/* Info Section */
 .info {
   margin-top: 30px;
   padding: 20px;
@@ -106,4 +106,73 @@ body {
 
 .social-links a:hover {
   color: #2563eb;
+}
+
+/* =========================
+   MOBILE RESPONSIVE STYLES
+========================= */
+
+@media (max-width: 768px) {
+  .header-banner {
+    height: 180px;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 150px;
+    top: 10px;
+    left: 15px;
+    border-width: 3px;
+  }
+
+  .info h1 {
+    font-size: 1.5rem;
+  }
+
+  .info p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  .footer h2 {
+    font-size: 1.2rem;
+  }
+
+  .social-links {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-banner {
+    height: 150px;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 120px;
+    top: 8px;
+    left: 10px;
+  }
+
+  .info h1 {
+    font-size: 1.2rem;
+  }
+
+  .info p {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .social-links {
+    gap: 10px;
+  }
 }
