@@ -9,30 +9,37 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="page-content">
 
 <!-- Hero Section -->
-<header>
-  <div class="profile-pic">
+<header class="fade-in">
+  <div class="top-right">
+    <button id="darkModeToggle" class="dark-mode-toggle">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+  
+  <div class="profile-pic scale-in">
     <img src="profile.jpg" alt="Vikranth V">
   </div>
 
-  <div class="hero-content">
-    <h1>VIKRANTH V</h1>
-    <p><i class='fas fa-graduation-cap'></i> B.Tech IT Student | <i class='fas fa-rocket'></i> iStart Member @ KIOT | <i class='fas fa-handshake'></i> ISTE Member | <i class='fas fa-laptop-code'></i> Tech Enthusiast | <i class='fas fa-tools'></i> Passionate Learner</p>
+  <div class="hero-content slide-in-left">
+    <h1 class="glow">VIKRANTH V</h1>
+    <p class="pulse"><i class='fas fa-graduation-cap'></i> B.Tech IT Student | <i class='fas fa-rocket'></i> iStart Member @ KIOT | <i class='fas fa-handshake'></i> ISTE Member | <i class='fas fa-laptop-code'></i> Tech Enthusiast | <i class='fas fa-tools'></i> Passionate Learner</p>
   </div>
 
-  <div class="hero-buttons">
-    <a href="Resume.pdf"><i class='fas fa-file-pdf'></i> Resume</a>
-    <a href="#contact"><i class='fas fa-envelope'></i> Contact</a>
+  <div class="hero-buttons slide-in-right animated-hover">
+    <a href="Resume.pdf" class="btn-resume glow"><i class='fas fa-file-pdf'></i> Resume</a>
+    <a href="#contact" class="btn-contact glow"><i class='fas fa-envelope'></i> Contact</a>
   </div>
 </header>
 
 <!-- About Section -->
-<section id="about" class="about">
+<section id="about" class="about fade-in">
   <h2>About Me</h2>
   
   <div class="bubble">
-    <p><i class='fas fa-graduation-cap'></i> B.Tech IT student at Knowledge Institute of Technology, Salem (Sep 2024 – Mar 2028) with a CGPA of 8.71 (upto 2nd semester). <i class='fas fa-laptop-code'></i> Passionate about coding, problem-solving, and building real-world applications. <i class='fas fa-handshake'></i> Active member of iStart KIOT MXIncubator Foundation and ISTE. <i class='fas fa-star'></i> Eager to learn, collaborate, and innovate in the tech field.</p>
+    <p><i class='fas fa-graduation-cap'></i> B.Tech IT student at Knowledge Institute of Technology, Salem (Sep 2024 – Mar 2028) with a CGPA of 8.71 (upto 2nd semester). <i class='fas fa-laptop-code'></i> Passionate about coding, problem-solving and building real-world applications. <i class='fas fa-handshake'></i> Active member of iStart KIOT MXIncubator Foundation and ISTE. <i class='fas fa-star'></i> Eager to learn, collaborate and innovate in the tech field.</p>
   </div>
 
   <h3>Education <i class='fas fa-book'></i></h3>
@@ -47,14 +54,14 @@
   <h3>Work Experience <i class='fas fa-briefcase'></i></h3>
   <div class="bubble">
     <ul>
-      <li><i class='fas fa-laptop-code'></i> Internship – InternPe (Python Programming), Remote (Jul 2025 – Present)</li>
+      <li><i class='fas fa-laptop-code'></i> Internship – InternPe (Python Programming), Remote (Jul 2025 – September 2025)</li>
       <li><i class='fas fa-handshake'></i> Member – iStart KIOT MXIncubator Foundation, Salem, Tamil Nadu (Sep 2024 – Present)</li>
     </ul>
   </div>
 </section>
 
 <!-- Skills Section -->
-<section id="skills" class="skills">
+<section id="skills" class="skills fade-in">
   <h2>Skills</h2>
   <div class="skills-list">
     <div><i class='fab fa-python'></i> Python (Beginner → Advanced)</div>
@@ -72,7 +79,7 @@
 </section>
 
 <!-- Participation in Technical Competitions and Hackathons Section -->
-<section id="competitions" class="projects">
+<section id="competitions" class="projects fade-in">
   <h2>Participation in Technical Competitions and Hackathons <i class='fas fa-trophy'></i></h2>
   <div class="competitions-grid">
     <!-- First 4 competitions (visible initially) -->
@@ -142,7 +149,7 @@
 </section>
 
 <!-- GitHub Repositories Section -->
-<section id="repositories" class="projects">
+<section id="repositories" class="projects fade-in">
   <h2>GitHub Repositories <i class='fab fa-github'></i></h2>
   <div class="repositories-grid">
     <!-- First 4 repositories (visible initially) -->
@@ -212,7 +219,7 @@
 </section>
 
 <!-- Projects Section -->
-<section id="projects" class="projects">
+<section id="projects" class="projects fade-in">
   <h2>Projects <i class='fas fa-folder'></i></h2>
   <div class="projects-container">
     <!-- First 4 projects (visible initially) -->
@@ -262,7 +269,7 @@
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="contact">
+<section id="contact" class="contact fade-in">
   <h2>Contact Me <i class='fas fa-envelope-open-text'></i></h2>
   <div class="contact-buttons">
     <a href="mailto:vvikranth08@gmail.com"><i class='fas fa-envelope'></i> Email</a>
@@ -275,8 +282,49 @@
 <footer>
   &copy; 2025 Vikranth V. All Rights Reserved.
 </footer>
+</div>
 
 <script>
+// Dark Mode Toggle Functionality
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
+
+// Check for saved theme preference or respect OS setting
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+  body.classList.add('dark-mode');
+  darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+}
+
+// Toggle dark mode
+darkModeToggle.addEventListener('click', function() {
+  // Add animation class to the toggle button
+  darkModeToggle.classList.add('mode-switching');
+  
+  // Add animation to the entire body
+  body.classList.add('mode-switching');
+  
+  setTimeout(() => {
+    body.classList.toggle('dark-mode');
+    
+    if (body.classList.contains('dark-mode')) {
+      darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+      localStorage.setItem('theme', 'light');
+    }
+    
+    // Remove animation classes after the animation completes
+    setTimeout(() => {
+      darkModeToggle.classList.remove('mode-switching');
+      body.classList.remove('mode-switching');
+    }, 600); // Match the animation duration
+  }, 10); // Small delay to ensure the animation triggers
+});
+
 const readMoreBtn = document.getElementById("readMoreBtn");
 const moreProjects = document.getElementById("more-projects");
 const repoReadMoreBtn = document.getElementById("repoReadMoreBtn");
@@ -310,6 +358,27 @@ compReadMoreBtn.addEventListener("click", function() {
     compReadMoreBtn.innerHTML = "<i class='fas fa-chevron-down'></i> Show More Participation";
   }
 });
+/* Intersection Observer for scroll animations */
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('appear');
+      observer.unobserve(entry.target); // Stop observing once animated
+    }
+  });
+}, observerOptions);
+
+// Observe all animated elements
+const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+animatedElements.forEach(el => {
+  observer.observe(el);
+});
+
 </script>
 
 </body>
