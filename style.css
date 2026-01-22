@@ -24,11 +24,24 @@ h2 {font-size:2rem; border-bottom:2px solid #007BFF; display:inline-block; paddi
 p {margin-bottom:15px;}
 
 /* Dark Mode Toggle Button */
-.top-right {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
+.dark-mode-toggle {
+  background: #00d8ff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  position: relative;
+  overflow: hidden;
+  margin-left: 12px;
+  margin-right: 8px;
 }
 
 .dark-mode-toggle {
@@ -54,7 +67,7 @@ p {margin-bottom:15px;}
   position: absolute;
   top: -50%;
   left: -60%;
-  width: 20px;
+  width: 15px;
   height: 200%;
   background: rgba(255, 255, 255, 0.3);
   transform: rotate(25deg);
@@ -433,6 +446,176 @@ body.dark-mode .dark-mode-toggle:hover {
 
 body.dark-mode .dark-mode-toggle i {
   color: #fff;
+}
+
+/* Navigation Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  padding: 6px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark-mode .navbar {
+  background: rgba(45, 45, 45, 0.85);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.nav-logo {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #007BFF;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+body.dark-mode .nav-logo {
+  color: #4da6ff;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007BFF;
+  background: rgba(0, 123, 255, 0.1);
+}
+
+body.dark-mode .nav-link {
+  color: #e0e0e0;
+}
+
+body.dark-mode .nav-link:hover {
+  color: #4da6ff;
+  background: rgba(77, 166, 255, 0.1);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.bar {
+  width: 20px;
+  height: 2px;
+  background: #333;
+  margin: 2px 0;
+  transition: 0.3s;
+}
+
+body.dark-mode .bar {
+  background: #e0e0e0;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-container {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .dark-mode-toggle {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    z-index: 1001;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 50px;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    padding: 10px 0;
+    box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+  }
+
+  body.dark-mode .nav-menu {
+    background: rgba(45, 45, 45, 0.95);
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+
+
+/* Adjust section padding to account for fixed navbar */
+section {
+  padding: 160px 20px 60px 20px; /* Increased top padding to account for navbar */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Adjust for mobile */
+@media screen and (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  section {
+    padding: 120px 20px 60px 20px; /* Even more top padding for mobile */
+  }
 }
 
 /* Animations */
