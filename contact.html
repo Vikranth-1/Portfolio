@@ -1,35 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Vikranth V</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet">
+  <title>Contact | Vikranth Vijayakumar (Vikranth V) | Software Developer</title>
+
+  <!-- Essential SEO Metadata -->
+  <meta name="description" content="Get in touch with Vikranth Vijayakumar (Vikranth V). Reach out via email, LinkedIn, GitHub, or WhatsApp for collaborations, internships, and inquiries.">
+  <meta name="keywords" content="Contact Vikranth V, Hire Vikranth V, Vikranth V Email, Vikranth V LinkedIn, Vikranth V GitHub, KIOT Salem Student, Vikranth Vijayakumar">
+  <meta name="author" content="Vikranth Vijayakumar">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vikranth-1.github.io/Portfolio/contact.html">
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vikranth-1.github.io/Portfolio/contact.html">
+  <meta property="og:title" content="Contact | Vikranth V">
+  <meta property="og:description" content="Get in touch with Vikranth V via email, LinkedIn, GitHub, or WhatsApp for collaborations and inquiries.">
+  <meta property="og:image" content="https://vikranth-1.github.io/Portfolio/profile.jpeg">
+  <meta property="og:site_name" content="Vikranth Vijayakumar Portfolio">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact | Vikranth V">
+  <meta name="twitter:description" content="Get in touch with Vikranth V via email, LinkedIn, GitHub, or WhatsApp for collaborations and inquiries.">
+  <meta name="twitter:image" content="https://vikranth-1.github.io/Portfolio/profile.jpeg">
+
+  <!-- Google Fonts & Stylesheets -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <!-- Navigation Bar -->
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">PORTFOLIO</a>
-      <div class="nav-menu" id="nav-menu">
-        <a href="index.html" class="nav-link"><i class='fas fa-user'></i> About</a>
-        <a href="skills.html" class="nav-link"><i class='fas fa-code'></i> Skills</a>
-        <a href="projects.html" class="nav-link"><i class='fas fa-folder'></i> Projects</a>
-        <a href="competitions.html" class="nav-link"><i class='fas fa-trophy'></i> Competitions</a>
-        <a href="contact.html" class="nav-link"><i class='fas fa-envelope'></i> Contacts</a>
+      <a href="index.html" class="nav-logo" aria-label="Portfolio Home">PORTFOLIO</a>
+      <div class="nav-menu" id="nav-menu" role="menubar">
+        <a href="index.html" class="nav-link" role="menuitem">About</a>
+        <a href="skills.html" class="nav-link" role="menuitem">Skills</a>
+        <a href="projects.html" class="nav-link" role="menuitem">Projects</a>
+        <a href="competitions.html" class="nav-link" role="menuitem">Competitions</a>
+        <a href="contact.html" class="nav-link" role="menuitem">Contacts</a>
       </div>
       <div class="nav-controls">
-        <button id="darkModeToggle" class="dark-mode-toggle">
-          <i class="fas fa-moon"></i>
+        <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle theme" type="button">
+          <i class="fas fa-moon" aria-hidden="true"></i>
         </button>
       </div>
-      <div class="hamburger" id="hamburger">
+      <div class="hamburger" id="hamburger" role="button" aria-label="Toggle menu navigation" aria-expanded="false" tabindex="0">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -37,23 +58,24 @@
     </div>
   </nav>
 
-  <div class="page-content">
+  <!-- Main Semantic Page Content -->
+  <main class="page-content">
     <br><br><br><br>
-    <section id="contact" class="contact fade-in">
-      <h2>Contact Me <i class='fas fa-envelope-open-text'></i></h2>
+    <section id="contact" class="contact fade-in card-hover-glow" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact Me</h2>
       <div class="contact-buttons">
-        <a href="mailto:vvikranth08@gmail.com"><i class='fas fa-envelope'></i> Email</a>
-        <a href="https://vikranth-1.github.io/Portfolio/"><i class='fas fa-globe'></i> Portfolio</a>
-        <a href="https://github.com/Vikranth-1"><i class='fas fa-code-branch'></i> GitHub</a>
-        <a href="https://www.linkedin.com/in/vikranth-vijayakumar/"><i class='fab fa-linkedin'></i> LinkedIn</a>
-        <a href="https://wa.me/919500951199" target="_blank"><i class='fab fa-whatsapp'></i> WhatsApp</a>
+        <a href="mailto:vvikranth08@gmail.com" aria-label="Send Email to Vikranth V">Email <i class='fas fa-arrow-right' aria-hidden="true"></i></a>
+        <a href="https://vikranth-1.github.io/Portfolio/" target="_blank" rel="noopener noreferrer" aria-label="Visit Vikranth V Portfolio Website">Portfolio <i class='fas fa-arrow-right' aria-hidden="true"></i></a>
+        <a href="https://github.com/Vikranth-1" target="_blank" rel="noopener noreferrer" aria-label="Visit Vikranth V GitHub Profile">GitHub <i class='fas fa-arrow-right' aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/vikranth-vijayakumar/" target="_blank" rel="noopener noreferrer" aria-label="Visit Vikranth V LinkedIn Profile">LinkedIn <i class='fas fa-arrow-right' aria-hidden="true"></i></a>
+        <a href="https://wa.me/919500951199" target="_blank" rel="noopener noreferrer" aria-label="Chat with Vikranth V on WhatsApp">WhatsApp <i class='fas fa-arrow-right' aria-hidden="true"></i></a>
       </div>
     </section>
 
     <footer>
-      &copy; 2026 Vikranth V. All Rights Reserved.
+      <p>&copy; <span id="copyright-year"></span> <strong>Vikranth Vijayakumar (Vikranth V)</strong>. All Rights Reserved.</p>
     </footer>
-  </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
