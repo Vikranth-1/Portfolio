@@ -83,8 +83,43 @@ function initGlobalHotkeys() {
     });
 }
 
-// --- Inline PDF Preview Logic ---
+// --- Modal PDF Preview Logic ---
 function initInlinePdfPreview() {
+    // Create modal if it doesn't exist
+    if (!document.getElementById('pdf-modal')) {
+        const modalHtml = `
+            <div id="pdf-modal" class="pdf-modal" aria-hidden="true">
+                <div class="pdf-modal-content">
+                    <div class="pdf-modal-header">
+                        <h3 id="pdf-modal-title">Certificate Preview</h3>
+                        <button id="pdf-modal-close" class="pdf-modal-close" aria-label="Close Preview">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="pdf-modal-body">
+                        <iframe id="pdf-modal-iframe" src="" title="PDF Preview" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+
+        const modal = document.getElementById('pdf-modal');
+        const closeBtn = document.getElementById('pdf-modal-close');
+
+        const closeModal = () => {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.getElementById('pdf-modal-iframe').src = ''; // clear iframe
+            document.body.style.overflow = ''; // restore scrolling
+        };
+
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+    }
+
     document.addEventListener('click', (e) => {
         const btn = e.target.closest('.btn-preview-inline');
         if (!btn) return;
@@ -94,21 +129,20 @@ function initInlinePdfPreview() {
         const card = btn.closest('.cert-card, .prize-card, .participation-card');
         if (!card) return;
         
-        const container = card.querySelector('.pdf-preview-container');
-        if (!container) return;
-        
         const pdfUrl = btn.getAttribute('data-pdf');
-        const isShowing = container.hasChildNodes();
+        const titleElement = card.querySelector('h3');
+        const titleText = titleElement ? titleElement.innerText : 'Certificate Preview';
         
-        if (isShowing) {
-            // Toggle off
-            container.innerHTML = '';
-            btn.innerHTML = '<i class="fas fa-eye" aria-hidden="true"></i> <span class="btn-text">Preview</span>';
-        } else {
-            // Toggle on
-            container.innerHTML = `<iframe src="${pdfUrl}#toolbar=0&navpanes=0&scrollbar=0" style="width: 100%; height: 400px; border: 1px solid var(--glass-border); border-radius: 8px; margin-top: 15px;" title="PDF Preview"></iframe>`;
-            btn.innerHTML = '<i class="fas fa-eye-slash" aria-hidden="true"></i> <span class="btn-text">Close Preview</span>';
-        }
+        const modal = document.getElementById('pdf-modal');
+        const iframe = document.getElementById('pdf-modal-iframe');
+        const modalTitle = document.getElementById('pdf-modal-title');
+        
+        modalTitle.innerText = titleText;
+        iframe.src = `${pdfUrl}#toolbar=0&navpanes=0&scrollbar=0`;
+        
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden'; // prevent scrolling behind modal
     });
 }
 
