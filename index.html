@@ -4,15 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vikranth Vijayakumar (Vikranth V) | Software Developer & B.Tech IT Student</title>
+  <title>Vikranth Vijayakumar (Vikranth V) | Software Developer Portfolio</title>
 
   <!-- Essential SEO Metadata -->
   <meta name="description"
-    content="Official portfolio of Vikranth Vijayakumar (Vikranth V), B.Tech IT student at Knowledge Institute of Technology (KIOT), Salem. Tech enthusiast & software developer skilled in Python, Web Development, Java, C++, and IoT.">
+    content="Official Software Developer portfolio of a developer, Vikranth Vijayakumar (Vikranth V), B.Tech IT student at KIOT, Salem. Skilled in FastAPI, React Native, C# & .NET, Postman, Python, Web Development, Java, C++, and IoT.">
   <meta name="keywords"
-    content="Vikranth V, Vikranth Vijayakumar, Vikranth V KIOT, Vikranth Vijayakumar Portfolio, Knowledge Institute of Technology, B.Tech IT KIOT, Web Developer Salem, Python Developer Tamil Nadu">
+    content="Vikranth V developer, Vikranth V software developer, Software Developer portfolio, Vikranth Vijayakumar software developer, a developer, FastAPI, React Native, Postman, C#, .NET, Vikranth Vijayakumar Portfolio, B.Tech IT KIOT, Web Developer Salem">
   <meta name="author" content="Vikranth Vijayakumar">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#111827">
+  
+  <!-- Dublin Core Metadata -->
+  <meta name="DC.title" content="Vikranth Vijayakumar (Vikranth V) | Software Developer Portfolio">
+  <meta name="DC.creator" content="Vikranth Vijayakumar">
+  <meta name="DC.subject" content="Software Developer portfolio">
+  <meta name="DC.description" content="Official Software Developer portfolio of a developer, Vikranth Vijayakumar (Vikranth V).">
+  <meta name="DC.publisher" content="Vikranth Vijayakumar">
+
   <link rel="canonical" href="https://vikranth-1.github.io/Portfolio/">
 
   <!-- Open Graph Metadata -->
@@ -41,6 +50,7 @@
     "url": "https://vikranth-1.github.io/Portfolio/",
     "image": "https://vikranth-1.github.io/Portfolio/profile.jpeg",
     "jobTitle": "Software Developer",
+    "knowsAbout": ["FastAPI", "React Native", "Postman", "C#", ".NET", "Python", "Java", "System Design"],
     "worksFor": {
       "@type": "Organization",
       "name": "Knowledge Institute of Technology"
@@ -58,6 +68,12 @@
   </script>
 
   <!-- Google Fonts & Stylesheets -->
+  <!-- Preload Critical Assets & Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap">
+  <link rel="preload" as="style" href="style.css">
+  
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
@@ -92,10 +108,10 @@
   </nav>
 
   <!-- Main Semantic Page Content -->
-  <main class="page-content">
+  <main class="page-content" role="main">
     <header class="fade-in card-hover-glow">
-      <div class="profile-pic scale-in">
-        <img src="profile.jpeg" alt="Portrait photo of Vikranth Vijayakumar (Vikranth V)">
+      <div class="hero-image slide-in-right">
+        <img src="profile.jpeg" alt="Portrait photo of Vikranth Vijayakumar (Vikranth V), a Software Developer" width="300" height="300">
       </div>
       <div class="hero-content slide-in-left">
         <h1 class="glow">VIKRANTH V</h1>
@@ -111,7 +127,7 @@
     <section id="about" class="about fade-in card-hover-glow" aria-labelledby="about-heading">
       <h2 id="about-heading">About Me</h2>
       <div class="bubble">
-        <p>I’m a B.Tech Information Technology student passionate about software development, problem-solving, and building practical technology solutions. I have hands-on experience with Java, Python, FastAPI, MySQL, React Native, and modern application development, with projects spanning backend systems, mobile applications, and commercial software.</p>
+        <p>I’m a B.Tech Information Technology student passionate about software development, problem-solving, and building practical technology solutions. I have hands-on experience with Java, Python, FastAPI, MySQL, React Native, C# & .NET, and Postman for API testing. My modern application development projects span backend systems, cross-platform mobile applications, and commercial software.</p>
         <br>
         <p>I enjoy turning ideas into functional products and strengthening my fundamentals through data structures, algorithms, system design, and continuous problem-solving. One of my projects, a shipping label generator, was developed for and adopted by a real business, giving me valuable exposure to building software beyond academic requirements.</p>
         <br>
@@ -138,13 +154,12 @@
       </div>
     </section>
 
-    <footer>
-      <p>&copy; <span id="copyright-year"></span> <strong>Vikranth Vijayakumar (Vikranth V)</strong>. All Rights
-        Reserved.</p>
+    <footer role="contentinfo">
+      <p>&copy; <span id="copyright-year"></span> <strong>Vikranth Vijayakumar (Vikranth V)</strong>. All Rights Reserved.</p>
     </footer>
   </main>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>

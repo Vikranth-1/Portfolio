@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- 
+  This is a hidden SEO reference and configuration file. 
+  It is not meant to be publicly linked or visited by users.
+  It stores reference schemas, JSON-LD data, and meta tag templates for Vikranth Vijayakumar's portfolio.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SEO Reference & Configuration</title>
+    <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+    <h1>SEO Configuration Reference</h1>
+    <p>Target Keywords: "Vikranth V developer", "Vikranth V software developer", "Vikranth Vijayakumar software developer", "Software Developer portfolio", "a developer", "Vikranth Vijayakumar", "Vikranth V"</p>
+
+    <h2>1. Dublin Core Metadata (To be placed in head)</h2>
+    <code>
+        &lt;meta name="DC.title" content="Vikranth Vijayakumar (Vikranth V) | Software Developer"&gt;
+        &lt;meta name="DC.creator" content="Vikranth Vijayakumar"&gt;
+        &lt;meta name="DC.subject" content="Software Developer portfolio"&gt;
+        &lt;meta name="DC.description" content="Official portfolio of a developer, Vikranth Vijayakumar (Vikranth V)."&gt;
+        &lt;meta name="DC.publisher" content="Vikranth Vijayakumar"&gt;
+    </code>
+
+    <h2>2. Schema.org - Person Profile (For index.html)</h2>
+    <code>
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Vikranth Vijayakumar",
+      "alternateName": "Vikranth V",
+      "url": "https://vikranth-1.github.io/Portfolio/",
+      "image": "https://vikranth-1.github.io/Portfolio/profile.jpeg",
+      "jobTitle": "Software Developer",
+      "knowsAbout": ["FastAPI", "React Native", "Postman", "C#", ".NET", "Python", "Java", "System Design"],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Knowledge Institute of Technology"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Knowledge Institute of Technology",
+        "url": "https://www.kiot.ac.in/"
+      },
+      "sameAs": [
+        "https://github.com/Vikranth-1",
+        "https://www.linkedin.com/in/vikranth-vijayakumar/"
+      ]
+    }
+    </code>
+
+    <h2>3. Performance Optimizations implemented</h2>
+    <ul>
+        <li>Preload critical fonts: <code>&lt;link rel="preload" href="https://fonts.googleapis.com/css2..." as="style"&gt;</code></li>
+        <li>Preconnect to external domains: <code>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</code></li>
+        <li>Defer JavaScript: <code>&lt;script src="script.js" defer&gt;&lt;/script&gt;</code></li>
+        <li>Theme color meta tag: <code>&lt;meta name="theme-color" content="#111827"&gt;</code></li>
+        <li>WAI-ARIA roles: <code>role="main"</code>, <code>role="navigation"</code>, <code>role="contentinfo"</code></li>
+        <li>Image optimization: <code>loading="lazy"</code> on below-fold images, descriptive <code>alt</code> tags.</li>
+    </ul>
+</body>
+</html>
