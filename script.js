@@ -124,12 +124,14 @@ function initInlinePdfPreview() {
         const btn = e.target.closest('.btn-preview-inline');
         if (!btn) return;
         
+        const pdfUrl = btn.getAttribute('data-pdf');
+        if (!pdfUrl) return; // Allow normal link behavior if no data-pdf
+        
         e.preventDefault();
         
         const card = btn.closest('.cert-card, .prize-card, .participation-card');
         if (!card) return;
         
-        const pdfUrl = btn.getAttribute('data-pdf');
         const titleElement = card.querySelector('h3');
         const titleText = titleElement ? titleElement.innerText : 'Certificate Preview';
         

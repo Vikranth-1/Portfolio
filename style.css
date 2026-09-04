@@ -1562,6 +1562,7 @@ footer {
   cursor: pointer;
   background: linear-gradient(135deg, var(--accent), var(--accent-hover));
   color: #ffffff;
+  text-decoration: none;
   transition: var(--transition-smooth);
   box-shadow: 0 4px 15px rgba(var(--accent-rgb), 0.3);
   position: relative;
